@@ -1,238 +1,170 @@
-Dompdf
-======
+# Biodata Perserta JCC
 
-[![Build Status](https://travis-ci.org/dompdf/dompdf.png?branch=master)](https://travis-ci.org/dompdf/dompdf)
-[![Latest Stable Version](https://poser.pugx.org/dompdf/dompdf/v/stable.png)](https://packagist.org/packages/dompdf/dompdf)
-[![Total Downloads](https://poser.pugx.org/dompdf/dompdf/downloads.png)](https://packagist.org/packages/dompdf/dompdf)
-[![Latest Unstable Version](https://poser.pugx.org/dompdf/dompdf/v/unstable.png)](https://packagist.org/packages/dompdf/dompdf)
-[![License](https://poser.pugx.org/dompdf/dompdf/license.png)](https://packagist.org/packages/dompdf/dompdf)
- 
-**Dompdf is an HTML to PDF converter**
+<p>Nama : Eko Muchamad Haryono</p>
+<p>Kelas : Laravel</p>
+<p>Email : <a>ekomh13@gmail.com</a></p>
 
-At its heart, dompdf is (mostly) a [CSS 2.1](http://www.w3.org/TR/CSS2/) compliant
-HTML layout and rendering engine written in PHP. It is a style-driven renderer:
-it will download and read external stylesheets, inline style tags, and the style
-attributes of individual HTML elements. It also supports most presentational
-HTML attributes.
+# Link Deploy
 
-*This document applies to the latest stable code which may not reflect the current 
-release. For released code please
-[navigate to the appropriate tag](https://github.com/dompdf/dompdf/tags).*
+Deploy Heroku : https://app-kasir-laravel-8-jcc-ryo.herokuapp.com/ (Deploy Link Sudah Bisa)
 
-----
+Notes :
 
-**Check out the [demo](https://dompdf.net/examples.php) and ask any
-question on [StackOverflow](http://stackoverflow.com/questions/tagged/dompdf) or
-on the [Google Groups](http://groups.google.com/group/dompdf).**
+-   Bug PDF Selesei Penyebab nya Route PDF Tertimpa Excel Aplikasi 100% Jalan Deploy dan Lokal.
 
-Follow us on [![Twitter](http://twitter-badges.s3.amazonaws.com/twitter-a.png)](http://www.twitter.com/dompdf).
+## Aplikasi Kasir Sederhana V1.0, Kelas JCC Partnership - Project Challenge (Laravel Project) Jabar Coding Camp (JCC)
 
----
+Jabar Coding Camp (JCC), Aplikasi Kasir V1.0 (Laravel Project), Kelas JCC Partnership - Project Challenge (Tantangan).<br>
+Anda diminta untuk membuat aplikasi kasir sederhana yang mencakup fitur:
 
+1. Mencatat transaksi pembelian barang
+2. Menampilkan daftar transaksi pembelian barang
+3. Authentikasi login pengguna
+4. Pengaturan data pengguna
+5. Pengaturan data master produk
 
+## Cara Instalasi ke Server Lokal :
 
-## Features
+-   Follow Github Saya
+-   Star Repo Github Saya
+-   Fork Repo Github Saya
+-   clone project repo saya dengan cara menuliskan pada terminal/cmd/git bash : git clone https://github.com/ekomh170/app_laravel_8_kasir_jcc.git
+-   lalu masuk ke direktori repo yg sudah di clone dengan ketik lg pada terminal/cmd/git bash <b>cd app_laravel_8_kasir_jcc</b>
+-   lalu ketik composser install dan php artisan key generate (jangan lupa salin dan setting file env)
+-   migrate database pada terminal/cmd/git bash
+-   jalankan php artisan db:seed pada terminal/cmd/git bash
 
- * Handles most CSS 2.1 and a few CSS3 properties, including @import, @media &
-   @page rules
- * Supports most presentational HTML 4.0 attributes
- * Supports external stylesheets, either local or through http/ftp (via
-   fopen-wrappers)
- * Supports complex tables, including row & column spans, separate & collapsed
-   border models, individual cell styling
- * Image support (gif, png (8, 24 and 32 bit with alpha channel), bmp & jpeg)
- * No dependencies on external PDF libraries, thanks to the R&OS PDF class
- * Inline PHP support
- * Basic SVG support (see "Limitations" below)
- 
-## Requirements
+Notes : Jika Sudah Menjalankan db:seed (Seeder Laravel) yang berfungsi untuk membuatkan data secara otomatis pada database untuk password akun nya adalah :
 
- * PHP version 7.1 or higher
- * DOM extension
- * MBString extension
- * php-font-lib
- * php-svg-lib
- 
-Note that some required dependencies may have further dependencies 
-(notably php-svg-lib requires sabberworm/php-css-parser).
+<b>Akun Admin :</b>
 
-### Recommendations
+<ul>
+<li>email : ekomh13@gmail.com</li>
+<li>password : Amano2829</li>
+</ul>
 
- * OPcache (OPcache, XCache, APC, etc.): improves performance
- * GD (for image processing)
- * IMagick or GMagick extension: improves image processing performance
+<b>Akun Kasir :</b>
 
-Visit the wiki for more information:
-https://github.com/dompdf/dompdf/wiki/Requirements
+<ul>
+<li>email : dara@gmail.com</li>
+<li>password : Amano2829</li>
+</ul>
 
-## About Fonts & Character Encoding
+<ul>
+<li>email : amalia@gmail.com</li>
+<li>password : Amano2829</li>
+</ul>
 
-PDF documents internally support the following fonts: Helvetica, Times-Roman,
-Courier, Zapf-Dingbats, & Symbol. These fonts only support Windows ANSI
-encoding. In order for a PDF to display characters that are not available in
-Windows ANSI, you must supply an external font. Dompdf will embed any referenced
-font in the PDF so long as it has been pre-loaded or is accessible to dompdf and
-reference in CSS @font-face rules. See the
-[font overview](https://github.com/dompdf/dompdf/wiki/About-Fonts-and-Character-Encoding)
-for more information on how to use fonts.
+## Fitur Role Atau Pembatasan Menu Untuk Setiap Users
 
-The [DejaVu TrueType fonts](https://dejavu-fonts.github.io/) have been pre-installed
-to give dompdf decent Unicode character coverage by default. To use the DejaVu
-fonts reference the font in your stylesheet, e.g. `body { font-family: DejaVu
-Sans; }` (for DejaVu Sans). The following DejaVu 2.34 fonts are available:
-DejaVu Sans, DejaVu Serif, and DejaVu Sans Mono.
+-   Admin
+-   Kasir
 
-## Easy Installation
+## Fitur Aplikasi
 
-### Install with composer
+-   Login<br>
+-   Register<br>
+-   Logout<br>
+-   Halaman Utama<br><br>
 
-To install with [Composer](https://getcomposer.org/), simply require the
-latest version of this package.
+    A. Profile<br>
 
-```bash
-composer require dompdf/dompdf
-```
+-   Ubah Data (Data Profile)<br>
+-   Detail Data (Data Profile)<br><br>
 
-Make sure that the autoload file from Composer is loaded.
+    B. Data Pengguna<br>
 
-```php
-// somewhere early in your project's loading, require the Composer autoloader
-// see: http://getcomposer.org/doc/00-intro.md
-require 'vendor/autoload.php';
+-   Tambah Data (Data Pengguna)<br>
+-   Ubah Data (Data Pengguna)<br>
+-   Hapus Data (Data Pengguna)<br>
+-   Detail Data (Data Pengguna)<br>
+-   Cari Data (Data Pengguna)<br>
+-   Print Data (Data Pengguna)<br>
+-   PDF Data (Data Pengguna)<br>
+-   Print Data Detail (Data Pengguna)<br>
+-   PDF Data Detail (Data Pengguna)<br>
+-   Excel Export Data (Data Pengguna)<br><br>
 
-```
+    C. Master Barang<br>
 
-### Download and install
+-   Tambah Data (Master Barang)<br>
+-   Ubah Data (Master Barang)<br>
+-   Hapus Data (Master Barang)<br>
+-   Detail Data (Master Barang)<br>
+-   Cari Data (Master Barang)<br>
+-   Print Data (Master Barang)<br>
+-   PDF Data (Master Barang)<br>
+-   Print Data Detail (Master Barang)<br>
+-   PDF Data Detail (Master Barang)<br>
+-   Excel Export Data (Master Barang)<br><br>
 
-Download a packaged archive of dompdf and extract it into the 
-directory where dompdf will reside
+    C. Transaksi Pembelian<br>
 
- * You can download stable copies of dompdf from
-   https://github.com/dompdf/dompdf/releases
- * Or download a nightly (the latest, unreleased code) from
-   http://eclecticgeek.com/dompdf
+-   Tambah Data (Transaksi Pembelian)<br>
+-   Ubah Data (Transaksi Pembelian)<br>
+-   Hapus Data (Transaksi Pembelian)<br>
+-   Detail Data (Transaksi Pembelian)<br>
+-   Cari Data (Transaksi Pembelian)<br>
+-   Print Data (Transaksi Pembelian)<br>
+-   PDF Data (Transaksi Pembelian)<br>
+-   Print Data Detail (Transaksi Pembelian)<br>
+-   PDF Data Detail (Transaksi Pembelian)<br>
+-   Excel Export Data (Transaksi Pembelian)<br><br>
 
-Use the packaged release autoloader to load dompdf, libraries,
-and helper functions in your PHP:
+    C. Transaksi Pembelian Barang<br>
 
-```php
-// include autoloader
-require_once 'dompdf/autoload.inc.php';
-```
+-   Tambah Data (Transaksi Pembelian Barang)<br>
+-   Ubah Data (Transaksi Pembelian Barang)<br>
+-   Hapus Data (Transaksi Pembelian Barang)<br>
+-   Detail Data (Transaksi Pembelian Barang)<br>
+-   Cari Data (Transaksi Pembelian Barang)<br>
+-   Print Data (Transaksi Pembelian Barang)<br>
+-   PDF Data (Transaksi Pembelian Barang)<br>
+-   Print Data Detail (Transaksi Pembelian Barang)<br>
+-   PDF Data Detail (Transaksi Pembelian Barang)<br>
+-   Excel Export Data (Transaksi Pembelian Barang)<br><br>
 
-Note: packaged releases are named according using semantic
-versioning (_dompdf_MAJOR-MINOR-PATCH.zip_). So the 1.0.0 
-release would be dompdf_1-0-0.zip. This is the only download
-that includes the autoloader for Dompdf and all its dependencies.
+## Aplikasi Screenshot
 
-### Install with git
+<img src="public/assets_readme/img/Halaman_Utama.PNG" alt="Halaman Utama">
+<img src="public/assets_readme/img/Halaman_Utama_Setelah_Login.PNG" alt="Halaman Setalah Login">
+<img src="public/assets_readme/img/Menu_Admin.PNG" alt="Menu Admin">
+<img src="public/assets_readme/img/Menu_Kasir.PNG" alt="Menu Kasir">
+<img src="public/assets_readme/img/Daftar_Transaksi.PNG" alt="Daftar Transaksi">
+<img src="public/assets_readme/img/Harga_Total.PNG" alt="Harga Total">
 
-From the command line, switch to the directory where dompdf will
-reside and run the following commands:
+## Alat Yang Digunakan Untuk Membuat Web :
 
-```sh
-git clone https://github.com/dompdf/dompdf.git
-cd dompdf/lib
+A. Hardware :
+Laptop Aspire E1-472G. Speaksifikasi :
 
-git clone https://github.com/PhenX/php-font-lib.git php-font-lib
-cd php-font-lib
-git checkout 0.5.1
-cd ..
+-   Ram : 4GB DD3 L Memory
+-   Prosesor : Intel Core i5-4200U 1.6 GHz with Turbo Boost up to 2.5 GHz
+-   Tipe System : 64 bit
+-   VGA : NVIDIA GEFORCE GT 720M with 2GB Dedicated VRAM
+-   SSD : 128 GB
 
-git clone https://github.com/PhenX/php-svg-lib.git php-svg-lib
-cd php-svg-lib
-git checkout v0.3.2
-cd ..
+B. Software :
 
-git clone https://github.com/sabberworm/PHP-CSS-Parser.git php-css-parser
-cd php-css-parser
-git checkout 8.1.0
-```
+-   WAMP
+-   Visual Studio Code
+-   Sublime Merge
+-   Git
+-   PHP 7.4.9
 
-Require dompdf and it's dependencies in your PHP.
-For details see the [autoloader in the utils project](https://github.com/dompdf/utils/blob/master/autoload.inc.php).
+C. Komponen
 
-## Quick Start
+-   Laravel 8
+-   Bootstrap 4 & 5
+-   Template Tambahan :
+    -   Sb Admin 2 (Bootstrap 4) (Untuk Template Admin Full)
+    -   Zinc (Bootstrap 5) (Khusus Halaman Utama)
+-   Library :
+    -   Carbon Laravel Time
+    -   Dompdf
+    -   Laravel Excel
+    -   Sweet Alert
+    -   Datatables
+    -   TinyMCE
 
-Just pass your HTML in to dompdf and stream the output:
-
-```php
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
-
-// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$dompdf->loadHtml('hello world');
-
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-// Output the generated PDF to Browser
-$dompdf->stream();
-```
-
-### Setting Options
-
-Set options during dompdf instantiation:
-
-```php
-use Dompdf\Dompdf;
-use Dompdf\Options;
-
-$options = new Options();
-$options->set('defaultFont', 'Courier');
-$dompdf = new Dompdf($options);
-```
-
-or at run time
-
-```php
-use Dompdf\Dompdf;
-
-$dompdf = new Dompdf();
-$options = $dompdf->getOptions();
-$options->setDefaultFont('Courier');
-$dompdf->setOptions($options);
-```
-
-See [Dompdf\Options](src/Options.php) for a list of available options.
-
-### Resource Reference Requirements
-
-In order to protect potentially sensitive information Dompdf imposes 
-restrictions on files referenced from the local file system or the web. 
-
-Files accessed through web-based protocols have the following requirements:
- * The Dompdf option "isRemoteEnabled" must be set to "true"
- * PHP must either have the curl extension enabled or the 
-   allow_url_fopen setting set to true
-   
-Files accessed through the local file system have the following requirement:
- * The file must fall within the path(s) specified for the Dompdf "chroot" option
-
-## Limitations (Known Issues)
-
- * Dompdf is not particularly tolerant to poorly-formed HTML input. To avoid
-   any unexpected rendering issues you should either enable the built-in HTML5
-   parser at runtime (`$options->setIsHtml5ParserEnabled(true);`) 
-   or run your HTML through a HTML validator/cleaner (such as
-   [Tidy](http://tidy.sourceforge.net) or the
-   [W3C Markup Validation Service](http://validator.w3.org)).
- * Table cells are not pageable, meaning a table row must fit on a single page.
- * Elements are rendered on the active page when they are parsed.
- * Embedding "raw" SVG's (`<svg><path...></svg>`) isn't working yet, you need to
-   either link to an external SVG file, or use a DataURI like this:
-     ```php
-     $html = '<img src="data:image/svg+xml;base64,' . base64_encode($svg) . '" ...>';
-     ```
-     Watch https://github.com/dompdf/dompdf/issues/320 for progress
-
----
-
-[![Donate button](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](http://goo.gl/DSvWf)
-
-*If you find this project useful, please consider making a donation.
-Any funds donated will be used to help further development on this project.)*
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
