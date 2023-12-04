@@ -1,65 +1,238 @@
-# [Start Bootstrap - SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/)
+Dompdf
+======
 
-[SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/) is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
+[![Build Status](https://travis-ci.org/dompdf/dompdf.png?branch=master)](https://travis-ci.org/dompdf/dompdf)
+[![Latest Stable Version](https://poser.pugx.org/dompdf/dompdf/v/stable.png)](https://packagist.org/packages/dompdf/dompdf)
+[![Total Downloads](https://poser.pugx.org/dompdf/dompdf/downloads.png)](https://packagist.org/packages/dompdf/dompdf)
+[![Latest Unstable Version](https://poser.pugx.org/dompdf/dompdf/v/unstable.png)](https://packagist.org/packages/dompdf/dompdf)
+[![License](https://poser.pugx.org/dompdf/dompdf/license.png)](https://packagist.org/packages/dompdf/dompdf)
+ 
+**Dompdf is an HTML to PDF converter**
 
-For the legacy Bootstrap 3 version of this theme, you can view the [last stable release](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/releases/tag/v3.3.7%2B1) of SB Admin 2 for Bootstrap 3.
+At its heart, dompdf is (mostly) a [CSS 2.1](http://www.w3.org/TR/CSS2/) compliant
+HTML layout and rendering engine written in PHP. It is a style-driven renderer:
+it will download and read external stylesheets, inline style tags, and the style
+attributes of individual HTML elements. It also supports most presentational
+HTML attributes.
 
-## Preview
+*This document applies to the latest stable code which may not reflect the current 
+release. For released code please
+[navigate to the appropriate tag](https://github.com/dompdf/dompdf/tags).*
 
-[![SB Admin 2 Preview](https://assets.startbootstrap.com/img/screenshots/themes/sb-admin-2.png)](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
+----
 
-**[Launch Live Preview](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)**
+**Check out the [demo](https://dompdf.net/examples.php) and ask any
+question on [StackOverflow](http://stackoverflow.com/questions/tagged/dompdf) or
+on the [Google Groups](http://groups.google.com/group/dompdf).**
 
-## Status
+Follow us on [![Twitter](http://twitter-badges.s3.amazonaws.com/twitter-a.png)](http://www.twitter.com/dompdf).
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin-2.svg)](https://www.npmjs.com/package/startbootstrap-sb-admin-2)
-[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2)
-[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2)
-[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2?type=dev)
+---
 
-## Download and Installation
 
-To begin using this template, choose one of the following options to get started:
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/)
-* Install via npm: `npm i startbootstrap-sb-admin-2`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
+## Features
 
-## Usage
+ * Handles most CSS 2.1 and a few CSS3 properties, including @import, @media &
+   @page rules
+ * Supports most presentational HTML 4.0 attributes
+ * Supports external stylesheets, either local or through http/ftp (via
+   fopen-wrappers)
+ * Supports complex tables, including row & column spans, separate & collapsed
+   border models, individual cell styling
+ * Image support (gif, png (8, 24 and 32 bit with alpha channel), bmp & jpeg)
+ * No dependencies on external PDF libraries, thanks to the R&OS PDF class
+ * Inline PHP support
+ * Basic SVG support (see "Limitations" below)
+ 
+## Requirements
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+ * PHP version 7.1 or higher
+ * DOM extension
+ * MBString extension
+ * php-font-lib
+ * php-svg-lib
+ 
+Note that some required dependencies may have further dependencies 
+(notably php-svg-lib requires sabberworm/php-css-parser).
 
-### Gulp Tasks
+### Recommendations
 
-* `gulp` the default task that builds everything
-* `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-* `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-* `gulp js` minifies the themes JS file
-* `gulp vendor` copies dependencies from node_modules to the vendor directory
+ * OPcache (OPcache, XCache, APC, etc.): improves performance
+ * GD (for image processing)
+ * IMagick or GMagick extension: improves image processing performance
 
-You must have npm installed globally in order to use this build environment. This theme was built using node v11.6.0 and the Gulp CLI v2.0.1. If Gulp is not running properly after running `npm install`, you may need to update node and/or the Gulp CLI locally.
+Visit the wiki for more information:
+https://github.com/dompdf/dompdf/wiki/Requirements
 
-## Bugs and Issues
+## About Fonts & Character Encoding
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/).
+PDF documents internally support the following fonts: Helvetica, Times-Roman,
+Courier, Zapf-Dingbats, & Symbol. These fonts only support Windows ANSI
+encoding. In order for a PDF to display characters that are not available in
+Windows ANSI, you must supply an external font. Dompdf will embed any referenced
+font in the PDF so long as it has been pre-loaded or is accessible to dompdf and
+reference in CSS @font-face rules. See the
+[font overview](https://github.com/dompdf/dompdf/wiki/About-Fonts-and-Character-Encoding)
+for more information on how to use fonts.
 
-## About
+The [DejaVu TrueType fonts](https://dejavu-fonts.github.io/) have been pre-installed
+to give dompdf decent Unicode character coverage by default. To use the DejaVu
+fonts reference the font in your stylesheet, e.g. `body { font-family: DejaVu
+Sans; }` (for DejaVu Sans). The following DejaVu 2.34 fonts are available:
+DejaVu Sans, DejaVu Serif, and DejaVu Sans Mono.
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+## Easy Installation
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+### Install with composer
 
-Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+To install with [Composer](https://getcomposer.org/), simply require the
+latest version of this package.
 
-* <https://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+```bash
+composer require dompdf/dompdf
+```
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Make sure that the autoload file from Composer is loaded.
 
-## Copyright and License
+```php
+// somewhere early in your project's loading, require the Composer autoloader
+// see: http://getcomposer.org/doc/00-intro.md
+require 'vendor/autoload.php';
 
-Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE) license.
+```
+
+### Download and install
+
+Download a packaged archive of dompdf and extract it into the 
+directory where dompdf will reside
+
+ * You can download stable copies of dompdf from
+   https://github.com/dompdf/dompdf/releases
+ * Or download a nightly (the latest, unreleased code) from
+   http://eclecticgeek.com/dompdf
+
+Use the packaged release autoloader to load dompdf, libraries,
+and helper functions in your PHP:
+
+```php
+// include autoloader
+require_once 'dompdf/autoload.inc.php';
+```
+
+Note: packaged releases are named according using semantic
+versioning (_dompdf_MAJOR-MINOR-PATCH.zip_). So the 1.0.0 
+release would be dompdf_1-0-0.zip. This is the only download
+that includes the autoloader for Dompdf and all its dependencies.
+
+### Install with git
+
+From the command line, switch to the directory where dompdf will
+reside and run the following commands:
+
+```sh
+git clone https://github.com/dompdf/dompdf.git
+cd dompdf/lib
+
+git clone https://github.com/PhenX/php-font-lib.git php-font-lib
+cd php-font-lib
+git checkout 0.5.1
+cd ..
+
+git clone https://github.com/PhenX/php-svg-lib.git php-svg-lib
+cd php-svg-lib
+git checkout v0.3.2
+cd ..
+
+git clone https://github.com/sabberworm/PHP-CSS-Parser.git php-css-parser
+cd php-css-parser
+git checkout 8.1.0
+```
+
+Require dompdf and it's dependencies in your PHP.
+For details see the [autoloader in the utils project](https://github.com/dompdf/utils/blob/master/autoload.inc.php).
+
+## Quick Start
+
+Just pass your HTML in to dompdf and stream the output:
+
+```php
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
+
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml('hello world');
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
+```
+
+### Setting Options
+
+Set options during dompdf instantiation:
+
+```php
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
+$options = new Options();
+$options->set('defaultFont', 'Courier');
+$dompdf = new Dompdf($options);
+```
+
+or at run time
+
+```php
+use Dompdf\Dompdf;
+
+$dompdf = new Dompdf();
+$options = $dompdf->getOptions();
+$options->setDefaultFont('Courier');
+$dompdf->setOptions($options);
+```
+
+See [Dompdf\Options](src/Options.php) for a list of available options.
+
+### Resource Reference Requirements
+
+In order to protect potentially sensitive information Dompdf imposes 
+restrictions on files referenced from the local file system or the web. 
+
+Files accessed through web-based protocols have the following requirements:
+ * The Dompdf option "isRemoteEnabled" must be set to "true"
+ * PHP must either have the curl extension enabled or the 
+   allow_url_fopen setting set to true
+   
+Files accessed through the local file system have the following requirement:
+ * The file must fall within the path(s) specified for the Dompdf "chroot" option
+
+## Limitations (Known Issues)
+
+ * Dompdf is not particularly tolerant to poorly-formed HTML input. To avoid
+   any unexpected rendering issues you should either enable the built-in HTML5
+   parser at runtime (`$options->setIsHtml5ParserEnabled(true);`) 
+   or run your HTML through a HTML validator/cleaner (such as
+   [Tidy](http://tidy.sourceforge.net) or the
+   [W3C Markup Validation Service](http://validator.w3.org)).
+ * Table cells are not pageable, meaning a table row must fit on a single page.
+ * Elements are rendered on the active page when they are parsed.
+ * Embedding "raw" SVG's (`<svg><path...></svg>`) isn't working yet, you need to
+   either link to an external SVG file, or use a DataURI like this:
+     ```php
+     $html = '<img src="data:image/svg+xml;base64,' . base64_encode($svg) . '" ...>';
+     ```
+     Watch https://github.com/dompdf/dompdf/issues/320 for progress
+
+---
+
+[![Donate button](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](http://goo.gl/DSvWf)
+
+*If you find this project useful, please consider making a donation.
+Any funds donated will be used to help further development on this project.)*
